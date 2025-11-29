@@ -1,2 +1,15 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>Lista de Compras</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div>
+        <ul>
+            <li>
+                <a href="/products/<%= product.id %>">
+                    <%= product.name %>    
+                </a>            
+            </li>
+        </ul>
+    </div>
+    <% end %>
+</div>
