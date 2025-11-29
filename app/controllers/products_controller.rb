@@ -20,6 +20,19 @@ class ProductsController < ApplicationController
     end
   end  
 
+  def edit 
+    @product = Product.find(params[:id])
+  end
+
+  def update 
+    @product = Product.find(params[:id])
+    if @product.update(permit_params)
+      redirect_to @product
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def permit_params
       params.expect(product: [ :name, :price, :quantity ])

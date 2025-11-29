@@ -1,0 +1,24 @@
+<h1>Editar produto</h1>
+
+<%= form_with model: @product do |form| %>
+  <div>
+    <%= form.label :name, 'Nome' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price, 'Preço' %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, 'Quantidade' %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit("Salvar") %>
+  </div>
+<% end %>
+
+<%= link_to "Cancelar", products_path %>
